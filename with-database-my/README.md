@@ -1,8 +1,8 @@
-# PHP with Apatche and MySQL (Adminer)
+# PHP with Apatche and MySQL (phpMyAdmin)
 
 ## 方法
 
-<https://github.com/insell824/php-envs/tree/main/with-database> にある構成を真似てください。
+<https://github.com/insell824/php-envs/tree/main/with-database-my> にある構成を真似てください。
 `public` の中のファイルがホストされます。
 
 ## 手軽に試す方法
@@ -20,14 +20,15 @@ $ docker-compose up -d
 
 - Web にアクセス: <http://localhost:8080/>
 - データベース管理画面: <http://localhost:8081/>
-  - データベースの種類: MySQL
-  - サーバ: db:3306
-  - ユーザ名: root
-  - パスワード: password123456
-  - データベース: db1
-  - 永続的にログイン: はい
 
 ```bash
 # 終了（データベースのデータは残ります）
 $ docker-compose down
+```
+
+`.env` にポート番号を指定すると任意の番号に変更できます。
+
+```ini
+PORT=3000
+MY_ADMIN_PORT=3030
 ```
