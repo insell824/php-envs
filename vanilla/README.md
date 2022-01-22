@@ -57,12 +57,20 @@ $ docker run --rm -it -v "$PWD":/app -u 1000 composer create-project laravel/lar
 
 ```bash
 # Mac
-docker run --rm -it -v "$PWD":/home/node/app -w /home/node/app node:16.13.2-alpine sh
+$ docker run --rm -it -v "$PWD":/home/node/app -w /home/node/app node:16.13.2-alpine sh
 
 # WSL
-docker run --rm -it -v "$PWD":/home/node/app -w /home/node/app -u 1000 node:16.13.2-alpine sh
+$ docker run --rm -it -v "$PWD":/home/node/app -w /home/node/app -u 1000 node:16.13.2-alpine sh
 ```
 
 [Node.js Version List](https://nodejs.org/ja/download/releases/)
 
 一般的には、LTS を使用する。
+
+## Node.js ワンライナー
+
+Laravel で `npm install` と `npm run dev` を実行し、js と css のビルドファイルを作成する必要がある場合に活用可能。
+
+```bash
+$ docker run --rm -it -v "$PWD":/home/node/app -w /home/node/app -u 1000 node:16.13.2-alpine /bin/sh -c "npm install && npm run dev"
+```
